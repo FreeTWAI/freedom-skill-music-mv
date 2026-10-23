@@ -4,5 +4,3 @@
 private/
 credentials*.json
 .DS_Store
-*.pyc
-__pycache__/
