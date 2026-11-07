@@ -25,6 +25,48 @@
 
 公開 fork 放模板和自己願意公開的成果；客戶私密 brief、未公開素材、聯絡方式與憑證請留在你管理的私人位置。這個 repo 不會登入任何平台或代你發布內容。
 
+## 核心模組 (Core Modules)
+
+本專案包含以下核心模組與文件，幫助使用者完成音樂與 MV 的初步企劃與紀錄：
+
+- **`SKILL.md`**：入門教學，提供如何選定片段、整合聲影企劃、留下製作紀錄以及尋求回饋的完整流程。
+- **`RESULT-TEMPLATE.md`**：成果卡模板，使用者可複製此文件以記錄每次企劃的細節、負責人、素材參考及製作方式。
+- **`SOURCE-REGISTER.md`**：素材來源紀錄表，協助使用者管理所有使用的授權素材、連結與可使用範圍。
+- **`skill-book.json`**：技能書設定檔，定義本手冊的基本資訊、版本與入口，提供給自由工坊平台識別。
+
+## 使用範例 (Usage Examples)
+
+你可以透過以下方式來使用本入門手冊：
+
+### 1. 手動執行 (Manual Execution)
+- 閱讀 `SKILL.md` 以了解企劃流程。
+- 將 `RESULT-TEMPLATE.md` 複製為 `my-song-plan.md`，填入你的歌曲段落與畫面構想。
+- 將所有收集到的素材連結填入 `SOURCE-REGISTER.md`，並標明使用限制。
+
+### 2. AI 輔助 Prompt 企劃 (AI-Assisted Prompt Planning)
+若你使用 AI 工具生成音樂或影像，可以將 `RESULT-TEMPLATE.md` 提供給 AI，並指示：
+- 「請根據以下風格（例如 Cyberpunk、120 BPM），幫我把這段文字擴寫為影片與聲音生成的 Prompt。」
+- 在成果模板中加入 `[prompt_audio]` 與 `[prompt_video]` 欄位來保存你的提示詞。
+- 生成完成後，將 AI 產出的素材記錄到 `SOURCE-REGISTER.md`。
+
+## API 規格 (API Specifications)
+
+本專案使用 `skill-book.json` 作為設定檔，採用 `freedom.skill-book/v1` 格式：
+
+```json
+{
+  "format": "freedom.skill-book/v1", // 格式版本標識
+  "id": "freedom-skill-music-mv",    // 技能書唯一 ID
+  "title": "音樂與 MV 製作入門手冊", // 顯示標題
+  "version": "0.1.0",                // 內容版本
+  "guild_key": "guild_music_mv",     // 對應的公會識別碼
+  "entry": "SKILL.md",               // 技能書主要入口文件
+  "execution": "manual_or_member_owned_assistant", // 執行模式
+  "repository": "https://github.com/FreeTWAI/freedom-skill-music-mv",
+  "license": "NOASSERTION"           // 授權條款
+}
+```
+
 ## 來源與版本
 
 自由工坊新撰寫的入門內容，版本 `0.1.0`；沒有搬用第三方課程或作品。`NOASSERTION` 表示尚未另行宣告授權條款。公會會員身分、主力公會與技能書授予仍以自由工坊平台紀錄為準。
